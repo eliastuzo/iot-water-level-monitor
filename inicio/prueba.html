@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div>
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+      
+        new Chart('myChart', {
+          type: 'bar',
+          data: {
+            labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+            datasets: [{
+              label: 'Nivel en las últimas 24h',
+              data: [{x: 4, y: 80}, {x:8, y: 100}, {x:12, y: 100}, {x:16, y: 100}, {x:20, y: 100}, {x:24, y: 100}],
+              borderWidth: 0,
+              borderColor: 'white',
+              backgroundColor: 'white',
+              hoverBackgroundColor: 'blue'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                    color: 'white'
+                },
+                grid: {
+                        color: 'white'
+                }
+              },
+              x: {
+                ticks: {
+                    color: 'white'
+                },
+              }
+            },
+            plugins: {
+                        // Changing the lagend colour
+                        legend: {
+                            labels: {
+                                color: "white",
+                            },
+                        },
+                    },
+          }
+        });
+        let chart = new Chart('myChart2', {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Nivel en las últimas 24h',
+            borderWidth: 0,
+            borderColor: 'white',
+            backgroundColor: 'white',
+            hoverBackgroundColor: 'blue',
+            data: [{
+                x: '06-11-2025 04:00:00',
+                y: 50
+            }, {
+                x: '06-11-2025 08:00:00',
+                y: 60
+            }, {
+                x: '06-11-2025 12:00:00',
+                y: 20
+            }, {
+                x: '06-11-2025 16:00:00',
+                y: 20
+            }]
+        }],
+    },
+    options: {
+        scales: {
+          y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                    color: 'white'
+                },
+                grid: {
+                        color: 'white'
+                }
+              },
+              x: {
+                ticks: {
+                    color: 'white'
+                },
+              }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: "white",
+            },
+          },
+        },
+    }
+});
+      </script>
+</body>
+</html>
